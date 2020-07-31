@@ -1,0 +1,3 @@
+﻿  work1.cpp
+E:\A_MyProjects\C++\work1\work1\work1\work1.cpp(3,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  work1.vcxproj -> E:\A_MyProjects\C++\work1\work1\Debug\work1.exe
