@@ -4,15 +4,15 @@ using namespace std;
 int main(){
     float Quiz1, Quiz2, Quiz3, QuizTotal,MidtermScore, FinalScore, TotalScore;
     cout << ("\n=================QUIZZES======================");
-    cout << ("\nEnter first quizz (10) :");                         //input Quiz1
+    cout << ("\nEnter first quizz (10) :");                         //input Quiz1 Score
         cin >> (Quiz1);
-    cout << ("Enter second quizz (10) :");                          //input Quiz2
+    cout << ("Enter second quizz (10) :");                          //input Quiz2 Score
         cin >> (Quiz2);
-    cout << ("Enter third quizz (10) :");                           //input Quiz3
+    cout << ("Enter third quizz (10) :");                           //input Quiz3 Score
         cin >> (Quiz3);
     cout << ("\n==================MID-TERM=====================");
     cout << ("\nEnter mid-term (40):");
-        cin >> (MidtermScore);                                      //input Midterm
+        cin >> (MidtermScore);                                      //input Midterm Score
     cout << ("\n==================FINAL=====================");
     cout << ("\nEnter final (50):");
         cin >> (FinalScore);      //input Final score
@@ -24,7 +24,7 @@ int main(){
     cout << ("\nFinal : ") << (FinalScore);
         TotalScore = QuizTotal+MidtermScore+FinalScore;  //Calculate TotalScore;
     cout << ("\nTotal : ") << (TotalScore) << ("\n");
-    cout << (TotalScore >= 50 ? Your score is PASS : Your score is FAIL);       //Tenary Operator(True : False)
+    cout << (TotalScore >= 50 ? Your score is PASS : Your score is FAIL);       //Ternary Operator(True : False)
     system ("pause");
     return 0;
 }
