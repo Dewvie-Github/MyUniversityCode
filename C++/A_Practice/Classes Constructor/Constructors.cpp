@@ -61,8 +61,3 @@ int main (){
     cout << myObj1.brand << myObj1.model << myObj1.year << endl;
     cout << myObj2.brand << myObj2.model << myObj2.year << endl;
 }
-
-
-
-
-
