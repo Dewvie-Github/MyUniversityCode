@@ -26,7 +26,7 @@ int main(){
 }
 
 //This is calAge func.
-int calAge(int year){
-    thisYear = 2563 - year;
+int calAge(int yearIn){
+    thisYear = 2563 - yearIn;
     return thisYear;
 }
