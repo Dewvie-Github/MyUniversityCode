@@ -7,7 +7,6 @@ length = float(input("Enter Length(meter): "))
 height = float(input("Enter Height(meter): "))
 bucketPrice = float(input("Enter interior paint price: "))
 
-
 # Calc module #####
 area = (width*height)*2 + (length*height)*2
 
