@@ -9,7 +9,7 @@ int main(){
 	cout << "Enter base2: ";
 		cin >> base2;
 
-	//This is where the base2 to base 10 Calc.
+	//This is where the base2 to base 1120 Calc.
 	while (base2 > 0){
 		sumStorage1 = base2 % 10;
 		base10 = base10 + (sumStorage1 * pow);		//pow = 1(2**0) then when program run pow'll be 2**x
@@ -18,5 +18,4 @@ int main(){
 	}
 	cout << "Base 10 = " << base10 << endl;
 	system("pause");
-	return 0;
 }
