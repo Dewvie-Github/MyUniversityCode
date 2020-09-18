@@ -1,28 +1,17 @@
 def grade_char(score):
-    if score >= 80 and score <= 100:
-        grade = 'A'
-    elif score >= 70 and score < 80:
-        grade = 'B'
-    elif score >= 60 and score < 70:
-        grade = 'C'
-    elif score >= 50 and score < 60:
-        grade = 'D'
-    elif score >= 0 and score < 50:
-        grade = 'F'
-    return grade
+    gradeList = ['A','B+','B','C+','C','D+','D','F']
+    scoreList = [80,75,70,65,60,55,50,0]
+    gradeWeight = [4,3.5,3,2.5,2,1.5,1,0]
+    for n in range(len(gradeList)):
+        if score >= (scoreList[n]):
+            return (gradeList[n])
 
 def grade_weight(grade):
-    if grade == 'A':
-        grade_w = 4
-    elif grade == 'B':
-        grade_w = 3
-    elif grade == 'C':
-        grade_w = 2
-    elif grade == 'D':
-        grade_w = 1
-    elif grade == 'F':
-        grade_w = 0
-    return grade_w
+    gradeList = ['A','B+','B','C+','C','D+','D','F']
+    gradeWeight = [4,3.5,3,2.5,2,1.5,1,0]
+    for n in range(len(gradeList)):
+        if grade == gradeList[n]:
+            return (gradeWeight[n])
 
 #Table Maker
 
@@ -31,7 +20,6 @@ def grade_table(def_table,no_count, subjectCount ,credit = 3):
     nameSpace = ''
     #spacebar for subject name
     
-        
     while subjectCount > 0:
         name = input(f'Enter subject name({count}) : ')
         score = int(input(f'Enter you score({count}) : '))
@@ -40,26 +28,64 @@ def grade_table(def_table,no_count, subjectCount ,credit = 3):
         grade = grade_char(score)
         gradeWeight = grade_weight(grade)
 
-        
         def_table += f'   {no_count}    {name}{nameSpace}  {score:.2f}'
         def_table += f'   {grade}        3         {gradeWeight*credit}\n'
         no_count += 1
         subjectCount -= 1
     return def_table
+
 print (">> Program Calculation Grade <<")
 print('')
-table = ''
-count = 1
 
-print_table = ''
+Subject = []
+Score = []
+Grade = []
+GradeWeight = []
+Credit = []
+Point = []
+
+
+table = ''
 subjectCount = int(input("Enter how many subject enroll in: "))
 
-print_table += grade_table(table,count, subjectCount, 3)
-count += 1
-subjectCount -= 1
-    
-print ("\t\t\t\t Grade Point\n")
-print (" ==============================================================")
-print (" Sub No.  Subject Name         Mark   Grade   Credits   Points")
-print (" ==============================================================")
-print (print_table)
+count = 1
+for n in range(subjectCount):
+    name = input(f'Enter subject name({count}): ')
+    score = float(input(f'Enter score({count}): '))
+    credit = int(input(f'Enter credit({count}): '))
+    grade = grade_char(score)
+    weight = grade_weight(grade)
+    count += 1
+
+    #add to List
+    Subject.append(name)
+    Score.append(score)
+    Grade.append(grade)
+    GradeWeight.append(weight)
+    Credit.append(credit)
+    Point.append(weight*credit)
+
+sumCredit = sum(Credit)
+sumPoint = sum(Point)
+gpa = sumPoint/sumCredit
+# Table Maker
+count = 1
+for n in range(len(Subject)):
+    table += f'{str(count).center(7)}{" "*3}'
+    table += f'{Subject[n]}{" "*(25-len(Subject[n]))}'
+    table += f'{str(Score[n]).center(10)}'
+    table += f'{Grade[n].center(10)}'
+    table += f'{str(Credit[n]).center(10)}'
+    table += f'{str(Point[n]).center(10)}'
+    table += '\n'
+    count += 1
+
+print ('Grade Point'.center(75))
+print ('='*75)
+print (f'Sub No.   Subject Name{" "*13}{"Mark".center(10)}{"Grade".center(10)}{"Credits".center(10)}{"Points".center(10)}')
+print ('='*75)
+print (table)
+print ('='*75)
+print (f'{" "*36}{"Total".center(10)}{" "*10}{str(sumCredit).center(10)}{str(sumPoint).center(10)}')
+print ('')
+print (f'Grade Point Average(GPA) : {gpa:.2f}')

@@ -2,7 +2,6 @@ import random
 
 Run = True
 ans = random.randint(1,99)
-print (ans)
 def ans_check(num):
     if (num > ans):
         print(f'num {num} is too much!')

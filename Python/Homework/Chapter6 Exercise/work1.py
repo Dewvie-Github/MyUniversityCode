@@ -1,4 +1,5 @@
-def find_max(num,numMax):
+def find_max(num):
+    numMax = 0
     for n in num:
         if int(n) > numMax:
             numMax = int(n)
@@ -7,10 +8,9 @@ def find_max(num,numMax):
 Run = True
 
 while Run == True:
-    numMax = 0
     num = input("Enter integer number(0-Exit): ")
     if num!= '0':
-        numMax = find_max(num,numMax)
+        numMax = find_max(num)
         print(f'Maximum Digit of integer {num} = {numMax}')
     elif num == '0':
         Run = False
