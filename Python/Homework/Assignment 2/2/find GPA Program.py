@@ -13,27 +13,6 @@ def grade_weight(grade):
         if grade == gradeList[n]:
             return (gradeWeight[n])
 
-#Table Maker
-
-def grade_table(def_table,no_count, subjectCount ,credit = 3):
-    no_count = 1
-    nameSpace = ''
-    #spacebar for subject name
-    
-    while subjectCount > 0:
-        name = input(f'Enter subject name({count}) : ')
-        score = int(input(f'Enter you score({count}) : '))
-        for b in range(1,24 - len(str(name))):
-            nameSpace += ' '
-        grade = grade_char(score)
-        gradeWeight = grade_weight(grade)
-
-        def_table += f'   {no_count}    {name}{nameSpace}  {score:.2f}'
-        def_table += f'   {grade}        3         {gradeWeight*credit}\n'
-        no_count += 1
-        subjectCount -= 1
-    return def_table
-
 print (">> Program Calculation Grade <<")
 print('')
 
@@ -68,6 +47,7 @@ for n in range(subjectCount):
 sumCredit = sum(Credit)
 sumPoint = sum(Point)
 gpa = sumPoint/sumCredit
+
 # Table Maker
 count = 1
 for n in range(len(Subject)):
