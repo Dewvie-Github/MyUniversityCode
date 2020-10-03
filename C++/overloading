@@ -1,0 +1,68 @@
+// Overloading
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+
+void DisplayMenu();
+float Area(const float radius);
+float Area(const float length, const float width);
+float Area(const double base, const double height);
+
+int main(){
+	char Choice;
+	bool run = true;
+	do{
+		DisplayMenu();
+		cout << "Enter menu : ";
+		cin >> Choice;
+		if (Choice == '1'){
+			float Radius;
+			cout << "\n Enter radius : ";
+			cin >> Radius;
+			cout << "Area of Circle = " << fixed;
+			cout << setprecision(2) << Area(Radius) << endl;
+		}
+		else if (Choice == '2'){
+			float width, length;
+			cout << "\n Enter width length : ";
+			cin >> width >> length;
+			cout << "\n Area of rectangle = " << fixed<<setprecision(2) << Area(width,length) << endl;
+		}
+		else if (Choice == '3'){
+			double base, height;
+			cout << "\n Enter base height : ";
+			cin >> base >> height;
+			cout << "\n Area of triangle = " << fixed<<setprecision(2) << Area(base,height) << endl;
+		}
+		else if (Choice == '4'){
+			cout << "Exit Program..." << endl;
+			run = false;
+		}
+		else cout << "Invalid input! Enter again." << endl << endl;
+	}while(run == true);
+	system("pause");
+	return 0;
+
+}
+
+float Area(const float Radius){
+	return 3.14159F * Radius * Radius;
+}
+
+float Area(const float length, const float width){
+	return length * width;
+}
+
+float Area(const double base, const double height){
+	return 0.5 * base * height;
+}
+
+void DisplayMenu(){
+	cout << endl;
+	cout << "Program Calculate Area " << endl;
+	cout << " 1. Circle." << endl;
+	cout << " 2. Rectangle" << endl;
+	cout << " 3. Triangle" << endl;
+	cout << " 4. Exit" << endl;
+}
