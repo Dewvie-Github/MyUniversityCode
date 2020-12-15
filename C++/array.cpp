@@ -23,7 +23,8 @@ int main()
 void display(int a[],int num)
 {
 	int b =0;
-	cout << "Threr are "<<num<<" persons."<<endl;
+	
+	cout << "Threre are "<<num<<" persons."<<endl;
 	for(int x=0;x<num;x++)
 	{
 		 b= cal_bonus(a[x]);
